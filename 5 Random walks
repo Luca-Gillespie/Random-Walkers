@@ -1,0 +1,94 @@
+import pygame
+import random
+
+pygame.init()
+window = pygame.display.set_mode((1600, 900))
+pygame.display.set_caption("random walkers")
+
+FPS = 60
+
+x = 800
+y = 450
+
+radius = 20
+
+velocity_perameter_1 = -1
+velocity_perameter_2 = 1
+
+a = 800
+b = 450
+
+c = 800
+d = 450
+
+e = 800
+f = 450
+
+g = 800
+h = 450
+
+run = True
+while run:
+    pygame.time.delay(0)
+
+    if x < 500 - radius:
+        velocity_x = random.randint(velocity_perameter_1, velocity_perameter_2)
+        x += velocity_x
+    if x > 0:
+        velocity_x = random.randint(velocity_perameter_1, velocity_perameter_2)
+        x += velocity_x
+    if y > 0:
+        velocity_y = random.randint(velocity_perameter_1, velocity_perameter_2)
+        y += velocity_y
+    if y < 500 - radius:
+        velocity_y = random.randint(velocity_perameter_1, velocity_perameter_2)
+        y += velocity_y
+
+    if a < 500 - radius:
+        velocity_a = random.randint(velocity_perameter_1, velocity_perameter_2)
+        a += velocity_a
+    if a > 0:
+        velocity_a = random.randint(velocity_perameter_1, velocity_perameter_2)
+        a += velocity_a
+    if b > 0:
+        velocity_b = random.randint(velocity_perameter_1, velocity_perameter_2)
+        b += velocity_b
+    if b < 500 - radius:
+        velocity_b = random.randint(velocity_perameter_1, velocity_perameter_2)
+        b += velocity_b
+
+
+    if c > 0 - radius:
+        velocity_c = random.randint(velocity_perameter_1, velocity_perameter_2)
+        c += velocity_c
+
+        velocity_d = random.randint(velocity_perameter_1,velocity_perameter_2)
+        d += velocity_d
+
+    if e > 0 - radius:
+        velocity_e = random.randint(velocity_perameter_1, velocity_perameter_2)
+        e += velocity_e
+
+        velocity_f = random.randint(velocity_perameter_1,velocity_perameter_2)
+        f += velocity_f
+
+    if g > 0 - radius:
+        velocity_g = random.randint(velocity_perameter_1, velocity_perameter_2)
+        g += velocity_g
+
+        velocity_h = random.randint(velocity_perameter_1,velocity_perameter_2)
+        h += velocity_h
+
+
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            run = False
+
+    pygame.draw.circle(window, (255, 0, 0), (x, y), 1)
+    pygame.draw.circle(window, (0,255,0), (a, b), 1)
+    pygame.draw.circle(window, (0, 0,255), (c, d), 1)
+    pygame.draw.circle(window, (255,255, 0), (e, f), 1)
+    pygame.draw.circle(window, (255, 255, 255), (g, h), 1)
+    pygame.display.update()
+
+pygame.quit()
